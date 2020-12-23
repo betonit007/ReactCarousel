@@ -9,30 +9,32 @@ const Carousel = () => {
     const id = useRef()
 
     const handleLeftClick = () => {
-        if (img.index === 0) {
+        img.index === 0 ?
             setImage({ index: images.length - 1, pause: true })
-        } else setImage({ index: img.index - 1, pause: true })
+            :
+            setImage({ index: img.index - 1, pause: true })
     }
 
     const handleRightClick = () => {
-        if (img.index === images.length - 1) {
+        img.index === images.length - 1 ?
             setImage({ index: 0, pause: true })
-        } else setImage({ index: img.index + 1, pause: true })
+            :
+            setImage({ index: img.index + 1, pause: true })
     }
 
     useEffect(() => {
-        if (img.pause) {
+        img.pause ?
             clearInterval(id.current)
-        } else {
+            :
             id.current = setInterval(() => {
                 if (img.index === images.length - 1) {
                     setImage({ index: 0 })
 
                 } else setImage({ index: img.index + 1 })
             }, 3000)
-        }
 
         return () => clearInterval(id.current)
+
     }, [img])
 
 
