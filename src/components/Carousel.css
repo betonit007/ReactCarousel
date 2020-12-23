@@ -1,0 +1,58 @@
+.carousel-container {
+    width: 60%;
+    min-width: 500px;
+    min-height: 700px;
+    /* background-color: black; */
+}
+
+.carousel-inner {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .3s linear;
+}
+
+.carousel-inner .left,
+.carousel-inner .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 5%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.401);
+}
+
+.carousel-inner .center {
+    flex: 90%;
+    height: 100%;
+    display: flex;
+    /*AFTER implementation of setInterval */
+    flex-direction: column-reverse;
+    justify-content: end;
+    align-items: center;
+}
+
+.carousel-inner .left i,
+.carousel-inner .right i {
+    cursor: pointer;
+    color: white;
+    opacity: .8;
+}
+
+.carousel-inner .left i:active,
+.carousel-inner .right i:active {
+    transform: scale(.97)
+}
+
+ /*AFTER implementation of setInterval */
+
+.center i {
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+    opacity: .8;
+}
